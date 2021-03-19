@@ -4,6 +4,10 @@ $ npm init -y
 ## Install svelte package 
 $ npm install -D svelte snowpack @snowpack/plugin-svelte
 
+## 소스 작성
+- Snowpack 설정
+- Hello Svelte 
+
 ## script 작성 (package.json)
 ```
   "scripts": {
