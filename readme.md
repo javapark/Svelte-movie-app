@@ -4,6 +4,19 @@ $ npm init -y
 ## Install svelte package 
 $ npm install -D svelte snowpack @snowpack/plugin-svelte
 
+## script 작성 (package.json)
+```
+  "scripts": {
+    "dev":"snowpack dev",
+    "build":"snowpack build"
+  },
+```
+
+## 개발서버 실행
+```
+$ npm run dev
+```
+
 ## Github 소스 관리
 ```
 git init
@@ -16,7 +29,9 @@ git push -u origin main
 
 ### .gitignore 설정
 ```
+touch .gitignore
 
+node_modules
 ```
 
 ## Ref
