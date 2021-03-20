@@ -38,5 +38,12 @@ touch .gitignore
 node_modules
 ```
 
+$ npm i -D autoprefixer postcss node-sass @snowpack/plugin-sass
+
+## Packages
+- @snowpack/plugin-svelte : Snowpack 에서 Svelte 를 해석할 수 있다. svelte-preprocess 가 같이 설치된다
+- autoprefixer: CSS 에 자동으로 공급 업체 접두사(vendor prefix)를 적용한다
+- postcss: CSS 후처리 패키지로 autoprefixer 를 사용하기 위해 설치한다
+
 ## Ref
 - [Svelte.js SPA 영화 검색 프로젝트](https://www.inflearn.com/course/%EC%8A%A4%EB%B2%A8%ED%8A%B8-%EC%8B%A4%EC%8A%B5-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/)
