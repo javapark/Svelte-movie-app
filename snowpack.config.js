@@ -38,5 +38,9 @@ module.exports = {
       },
     ],
     "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-optimize"
   ],
+  alias : {
+    '~':"./src"
+  }
 };
