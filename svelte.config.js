@@ -1,3 +1,5 @@
+const production = process.env.NODE_ENV === "production";
+
 function bableOptions() {
   return {
     plugins: production ? ["transform-remove-console"] : [],

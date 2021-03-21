@@ -133,3 +133,27 @@ vs code 에서 에러로 보임. 실제 빌드 결과에는 영향이 없음, �
 snowpack.config.js 의 `@snowpack/plugin-svelte` 의 옵션값을 별도의 파일(svelte.config.js) 로 지정하여 오류를 없애려고 시도해 본다. 아직도 남아 있을 것인데 이때 vscode 를 재시작한다. 그러면 없어진 것을 확인할 수 있다.
 
 ## Footer 컴포넌트 작성
+Footer 컴포넌트 작성 후 App.svelte에 추가
+```svelte
+<!-- src/components/Footer.svelte -->
+<footer>
+    <a href="https://github.com/javapark/Svelte-movie-app">GitHub Repo</a>
+    <a href="">
+        @{new Date().getFullYear()} 
+        Javapark</a>
+</footer>
+
+<style lang="scss">
+    footer{
+        padding: 70px;
+        text-align: center;
+        a {
+            color: $color--white-10;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+</style>
+```
