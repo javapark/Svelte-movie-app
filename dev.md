@@ -29,3 +29,40 @@ export default {
     { href: "/about", name: "About" },
   ];
 ```
+
+## 스타일 전역화
+
+```scss
+/* src/scss/main.scss */
+$color--black: #0e111B;
+$color--black-90:rgba($color--black, .9);
+$color--black-50:rgba($color--black, .5);
+
+$color--white: #fff;
+$color--white-60: rgba($color--white, .6);
+$color--white-50: rgba($color--white, .5;
+$color--white-30: rgba($color--white, .3;
+$color--white-10: rgba($color--white, .1);
+$color--white-5: rgba($color--white, .05);
+
+
+$color--primary: #fdc000;
+$color--area: #1c212E;
+```
+
+
+```scss
+/* src/components/Logo.svelte */
+  a {
+    display: block;
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    color: $color--white-50;
+    text-decoration: none;
+    span{
+        color: $color--primary;
+    }
+  }
+```
+
+## Header 컴포넌트 작성

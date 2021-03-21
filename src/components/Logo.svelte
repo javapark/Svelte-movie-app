@@ -9,10 +9,10 @@
     display: block;
     font-family: "Oswald", sans-serif;
     font-size: 30px;
-    color: rgba(#fff, .5);
+    color: $color--white-50;
     text-decoration: none;
     span{
-        color: #fdc000;
+        color: $color--primary;
     }
   }
 </style>
