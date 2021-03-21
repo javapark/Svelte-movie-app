@@ -45,6 +45,13 @@ $ npm i -D @snowpack/plugin-dotenv
 $ npm i -D @snowpack/plugin-optimize
 $ npm i -D svelte-spa-router
 
+## SPA 라우츠 링크와 하이라이팅(active)
+```
+<script>
+    import { link } from 'svelte-spa-router'
+</script>
+```
+
 ## Packages
 - snowpack : 프로젝트를 빌드하기 위한 핵심 패키지이다.
 - svelte : Svelte API를 사용하기 위한 핵심 패키지이다.
