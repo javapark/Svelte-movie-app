@@ -52,6 +52,12 @@ $ npm i -D svelte-spa-router
 </script>
 ```
 
+## Google Fonts
+- [Google Fonts](https://fonts.google.com/) : Roboto, Oswald
+
+## reset.css
+- reset.css(https://www.jsdelivr.com/package/npm/reset-css)
+
 ## Packages
 - snowpack : 프로젝트를 빌드하기 위한 핵심 패키지이다.
 - svelte : Svelte API를 사용하기 위한 핵심 패키지이다.
