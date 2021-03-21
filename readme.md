@@ -1,3 +1,5 @@
+
+# Day 1. 프로젝트 설정
 ## 새로운 프로젝트 생성 (package.json)
 $ npm init -y
 
