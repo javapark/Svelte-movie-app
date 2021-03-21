@@ -157,3 +157,7 @@ Footer 컴포넌트 작성 후 App.svelte에 추가
     }
 </style>
 ```
+
+## Headline 컴포넌트 작성
+Home 에 Headline 컴포넌트(`src/components/Headline.svelte`) 추가 
+
