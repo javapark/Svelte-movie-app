@@ -1,9 +1,9 @@
 const production = process.env.NODE_ENV === "production";
 
-function bableOptions(){
-  return  {  
+function bableOptions() {
+  return {
     plugins: production ? ["transform-remove-console"] : [],
-  }
+  };
 }
 
 module.exports = {
@@ -12,24 +12,7 @@ module.exports = {
     src: "/_dist_",
   },
   plugins: [
-    [
-      "@snowpack/plugin-svelte",
-      {
-        preprocess: require("svelte-preprocess")({
-          scss: {
-            // 외부에 있는 scss 에 있는 파일을 한번에 불러온다
-            prependData: '@import "./src/scss/main.scss";',
-          },
-          postcss: {
-            plugins: [
-              require("autoprefixer")(), // package.json browserslist 옵션 필수
-            ],
-          },
-          // svelte 컴포넌트에서 지움
-          babel: bableOptions(),
-        }),
-      },
-    ],
+    "@snowpack/plugin-svelte",
     [
       "@snowpack/plugin-babel",
       {
@@ -38,9 +21,9 @@ module.exports = {
       },
     ],
     "@snowpack/plugin-dotenv",
-    "@snowpack/plugin-optimize"
+    "@snowpack/plugin-optimize",
   ],
-  alias : {
-    '~':"./src"
-  }
+  alias: {
+    "~": "./src",
+  },
 };

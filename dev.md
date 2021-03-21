@@ -125,3 +125,11 @@ css 우선순위 ( id: 100, class : 10, tag : 1)
 ```
 
 ## VS Code SCSS 스타일 에러 해결
+vs code 에서 에러로 보임. 실제 빌드 결과에는 영향이 없음, 그래도 이를 해결하기 위한 방법을 찾아보자
+```svelte
+// Header.svelte : line32
+    background-color: $color--black-90;
+```
+snowpack.config.js 의 `@snowpack/plugin-svelte` 의 옵션값을 별도의 파일(svelte.config.js) 로 지정하여 오류를 없애려고 시도해 본다. 아직도 남아 있을 것인데 이때 vscode 를 재시작한다. 그러면 없어진 것을 확인할 수 있다.
+
+## Footer 컴포넌트 작성
