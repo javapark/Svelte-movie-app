@@ -66,3 +66,62 @@ $color--area: #1c212E;
 ```
 
 ## Header 컴포넌트 작성
+css 우선순위 ( id: 100, class : 10, tag : 1)
+```scss
+<style lang="scss">
+    header{
+        padding: 20px 40px;
+        background-color: $color--black-90;
+        position: sticky;
+        top: 0;
+        z-index: 9;
+        display: flex;
+        align-items: flex-end;
+        nav {
+            margin-left: 40px;
+            ul {
+                display: flex;
+                li{
+                    margin-left:10px;
+                    &:first-child{
+                        margin-left:0;
+                    }
+                    a{
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $color--white-50;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .user{
+            width: 40px;
+            height: 40px;
+            padding: 6px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            background-color: $color--area;
+            cursor: pointer;
+            position: absolute;
+            top:0;
+            bottom:0;
+            right:40px;
+            margin:auto;
+            transition: .4s;
+            &:hover{
+                background-color: lighten($color--area, 20%);
+            }
+            img{
+                width:100%;
+            }
+        }
+
+    }
+  header :global(a.active) {
+    color: $color--primary !important;
+  }
+</style>
+```
+
+## VS Code SCSS 스타일 에러 해결
