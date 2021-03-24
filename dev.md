@@ -167,3 +167,6 @@ Home 에 Headline 컴포넌트(`src/components/Headline.svelte`) 추가
 ## Search 컴포넌트 작성
 - Search components 작성
 - fr 단위는 fraction 의 약어로 '공간비율'을 의미한다
+
+
+## 404 Not Found
