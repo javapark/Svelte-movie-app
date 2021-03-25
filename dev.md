@@ -169,4 +169,16 @@ Home 에 Headline 컴포넌트(`src/components/Headline.svelte`) 추가
 - fr 단위는 fraction 의 약어로 '공간비율'을 의미한다
 
 
+
+## 영화검색 및 추가 검색구현
+- https 적용
+- API key 적용
+- async, await 적용
+
+## ID 중복
+```
+_.unionBy([{'x':1}])
+```
+
 ## 404 Not Found
+
