@@ -182,3 +182,6 @@ _.unionBy([{'x':1}])
 
 ## 404 Not Found
 
+
+## .gitignore 생성하고 GitHub 푸쉬
+https://gitignore.io
