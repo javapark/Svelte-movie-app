@@ -1,2 +1,15 @@
 [build]
-  functions = "functions"
+  command = "yarn run build"
+  functions = "functions" # netlify 서버리스 함수가 작성된 디렉토리를 지정한다
+  publish = "dist"  # 프로젝트 빌드 결과의 디렉토리를 지정한다
+
+# 개발모드
+[dev]
+  framework= "#custom"
+  command = "npm run dev" # Command to start your dev server
+  targetPort = 8080 # The port for your application server, framework or site generator
+  port = 8888 #  출력할 Netlify 서버의 포트를 지정한다.
+  publish = "public" # The path to your static content folder
+  jwtSecret = "secret" # The secret used to verify tokens for JWT based redirects
+  jwtRolePath = "app_metadata.authorization.roles" # Object path we should look for role values for JWT based redirects
+  autoLaunch = true # a Boolean value that determines if Netlify Dev launches the local server address in your browser

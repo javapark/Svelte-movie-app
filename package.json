@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "snowpack dev",
+    "dev:netlify": "netlify dev",
     "build": "snowpack build"
   },
   "keywords": [],
@@ -24,10 +25,12 @@
     "axios": "^0.21.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "lodash": "^4.17.21",
+    "netlify-cli": "^3.13.7",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.8",
     "snowpack": "3.0.13",
     "svelte": "3.35.0",
     "svelte-spa-router": "^3.1.0"
-  }
+  },
+  "dependencies": {}
 }
