@@ -185,3 +185,5 @@ _.unionBy([{'x':1}])
 
 ## .gitignore 생성하고 GitHub 푸쉬
 https://gitignore.io
+
+## Netlify 배포
