@@ -1,6 +1,5 @@
 import axios from "axios";
 import _unionBy from "lodash/unionBy";
-import { loadConfiguration } from "snowpack";
 import { writable, get } from "svelte/store";
 
 export const movies = writable([]);
