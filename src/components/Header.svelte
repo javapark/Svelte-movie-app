@@ -6,7 +6,7 @@
   const menus = [
     { href: "/", name: "Search" },
     { href: "/movie/tt4520988", name: "Movie" , path: '/movie/*'},
-    { href: "/about", name: "About", path: '/about' },
+    { href: "/about", name: "About", path: /^\/about/ },
   ];
 </script>
 

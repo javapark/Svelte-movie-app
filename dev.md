@@ -182,6 +182,22 @@ _.unionBy([{'x':1}])
 
 ## 404 Not Found
 
+## Query string
+- querystring 설치 
+```sh
+$ npm i -D qs
+```
+
+- 레이블 문법
+```
+$: query = qs.parse($querystring)
+```
+
+- active 관련 정규 표현식 지원
+```
+
+```
+
 
 ## .gitignore 생성하고 GitHub 푸쉬
 https://gitignore.io
@@ -189,3 +205,7 @@ https://gitignore.io
 ## Netlify 배포
 
 ## Netlify Serverless Functions
+- netlify.toml 배포 후 테스트 가능
+- 그럼 로컬에서는 어떻게 할까?
+
+## Netlify CLI
