@@ -1,5 +1,6 @@
 import axios from "axios";
 import _unionBy from "lodash/unionBy";
+import { loadConfiguration } from "snowpack";
 import { writable, get } from "svelte/store";
 
 export const movies = writable([]);
@@ -28,4 +29,20 @@ export async function searchMovies(payload) {
     }
   }
   console.log(get(movies));
+}
+
+/**
+ * 영화 상세 정보를 가져오는 함수
+ * @param {} id
+ */
+export async function searchMovieWidthId(id) {
+  if (get(loading)) return;
+  loading.set(true);
+
+  const OMDB_API_KEY = "1f5dee5a";
+  let _url = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full`;
+  const res = await axios.get(_url);
+  console.log(res);
+
+  loading.set(false);
 }

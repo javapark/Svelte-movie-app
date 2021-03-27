@@ -1,6 +1,65 @@
 <script>
-    export let params = {}
+  import Loader from "~/components/Loader.svelte";
+//   import { searchMovieWidthId } from "~/store/movie";
+
+  export let params = {};
+
+  //searchMovieWidthId(params.id);
 </script>
 
-<h1>Movie!</h1>
-<h2>{params.id}</h2>
+<div class="container">
+  <div class="skeleton-loader">
+    <div class="poster" />
+    <div class="skeletons">
+      <div class="skeleton title" />
+      <div class="skeleton specs" />
+      <div class="skeleton plot" />
+      <div class="skeleton etc" />
+      <div class="skeleton etc" />
+    </div>
+    <Loader absolute={true} />
+  </div>
+</div>
+
+<style lang="scss">
+  .skeleton-loader {
+    display: flex;
+    position: relative;
+    .skeletons {
+      flex: 1; // 플렉스 그로우 1, 화면 비율에 맞게 늘거나 준다
+      .skeleton {
+        width: 100%;
+        height: 100px;
+        background-color: $color--area;
+        border-radius: 8px;
+        margin-top: 20px;
+        &:first-child {
+          margin-top: 0;
+        }
+        &.title {
+          height: 100px;
+        }
+        &.specs {
+          width: 60%;
+          height: 30px;
+        }
+        &.plot {
+          height: 300px;
+        }
+        &.etc {
+          width: 40%;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .poster {
+    flex-shrink: 0;
+    width: 500px;
+    height: 500px * 3/2;
+    border-radius: 10px;
+    margin-right: 70px;
+    background-color: $color--area;
+  }
+</style>
