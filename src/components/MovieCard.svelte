@@ -1,9 +1,30 @@
 <script>
   import { link } from "svelte-spa-router";
+  import Loader from "~/components/Loader.svelte";
+
+  let imageLoading = true;
+
   export let movie;
+
+  if (movie.Poster === 'N/A'){
+    imageLoading = false
+  }else{
+    const img = document.createElement('img')
+    img.src = movie.Poster
+    img.addEventListener('load', ()=>{
+      imageLoading = false
+    })
+  }
 </script>
 
-<a use:link href={`/movie/${movie.imdbID}`} class="movie">
+<a use:link href={`/movie/${movie.imdbID}`} 
+  class="movie">
+  {#if imageLoading}
+    <Loader
+      scale=".5"
+      absolute
+    />
+  {/if}
   <div class="poster" style="background-image: url({movie.Poster});">
     {#if movie.Poster === "N/A"}
       OBMdAPI<br />
@@ -28,18 +49,18 @@
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    &:hover{
-         &::after{
-             content:"";
-             position:absolute;
-             top:0;
-             left:0;
-             width:100%;
-             height:100%;
-             border: 6px solid $color--primary;
-             box-sizing: border-box;
-         }
-     }
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 6px solid $color--primary;
+        box-sizing: border-box;
+      }
+    }
     .poster {
       width: 100%;
       height: 100%;
@@ -64,38 +85,37 @@
       position: absolute;
       left: 0;
       bottom: 0;
-    
+
       .poster {
-          // 화면에서 중복해서 나오게 하려고
+        // 화면에서 중복해서 나오게 하려고
         position: absolute;
         bottom: 0;
         left: 0;
         transform: scale(2);
-        filter:blur(5px);
-        &::after{
+        filter: blur(5px);
+        &::after {
           content: "";
           background-color: $color--black-50;
           position: absolute;
-          top:0;
-          left:0;
-          width:200%;
-          height:200%;
-      }
-
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+        }
       }
       .year {
-          position:relative;
-          color:$color--primary;
-          font-size:12px;
+        position: relative;
+        color: $color--primary;
+        font-size: 12px;
       }
       .title {
-        position:relative;
-        font-size:15px;
-        font-family: 'Oswald', sans-serif;
+        position: relative;
+        font-size: 15px;
+        font-family: "Oswald", sans-serif;
         color: $color--white;
-        overflow:hidden;
+        overflow: hidden;
         text-overflow: ellipsis; // 글자가 넘치면 ...
-        white-space: nowrap;    // 줄바꿈 하지 않겠다
+        white-space: nowrap; // 줄바꿈 하지 않겠다
       }
     }
   }

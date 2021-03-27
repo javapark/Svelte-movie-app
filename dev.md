@@ -180,6 +180,17 @@ Home 에 Headline 컴포넌트(`src/components/Headline.svelte`) 추가
 _.unionBy([{'x':1}])
 ```
 
+## 이미지 렌더링 전 로딩 애니메이션 추가
+- SpinKit(https://tobiasahlin.com/spinkit/)
+- 이미지 로딩 체크
+```
+    const img = document.createElement('img')
+    img.src = movie.Poster
+    img.addEventListener('load', ()=>{
+      imageLoading = false
+    })
+```
+
 ## 404 Not Found
 
 ## Query string
