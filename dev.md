@@ -609,6 +609,11 @@ $mobile: "all and (max-width:720px)";
 }
 ```
 
+```svelte Search.svelte
+grid-column: 1/-1;  // 한줄을 모두 사용하겠다
+```
+
+
 # GitHub 그리고 Netlify
 
 ## 1. .gitignore 생성하고 GitHub 에 푸쉬
