@@ -67,7 +67,13 @@
     display: grid;
     grid-template-columns: 1fr repeat(4, 120px);
     grid-gap: 10px;
+    @media #{$tablet} {
+      grid-template-columns: repeat(3, 120px) 1fr;
+      grid-template-rows: repeat( 2, 50px);
+    }
+    @media #{$tablet} {
 
+    }
     .text-field {
       display: inline-block;
       height: 50px;
