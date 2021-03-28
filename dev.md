@@ -545,8 +545,44 @@ $: query = qs.parse($querystring)
 상세보기에서 뒤로가기 했을때 초기화하는 방법
 
 ## 16. 페이지 전환 효과(Fade)
+svelte-spa-router 의 advanced usage 를 보면 Route transition ( fade 기능)을 이용할 수 있다
+- `단, ` 컴포넌트에는 in:fade 를 붙일 수 없다
+```svelte App.svelte
+<script>
+  import { fade } from "svelte/transition"
+  import Router from "svelte-spa-router"
+  import routes from "~/routes"  // index.js 생략 가능
+  import Header from "~/components/Header.svelte"
+  import Footer from "~/components/Footer.svelte"
+</script>
 
-## 17. 페이지 전환 스크롤 위치 복고
+<Header />
+<div in:fade>
+  <Router {routes} />
+</div>
+<Footer />
+```
+- 최초 랜더링 시 적용 되지만 이후 페이지 바뀔 시 페이지 전환 효과가 발생하지 않는다 ( location 스토어 객체를 이용할 수 있다)
+```svelte App.svelte
+<script>
+  import { fade } from "svelte/transition";
+  import Router, { location } from "svelte-spa-router";
+  import routes from "~/routes"; // index.js 생략 가능
+  import Header from "~/components/Header.svelte";
+  import Footer from "~/components/Footer.svelte";
+</script>
+
+<Header />
+{#key $location}
+  <div in:fade>
+    <Router {routes} />
+  </div>
+{/key}
+<Footer />
+
+```
+
+## 17. 페이지 전환 스크롤 위치 복구
 
 ## 18. 반응형 스타일 일괄 적용
 

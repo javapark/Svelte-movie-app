@@ -16,6 +16,7 @@ export function initMovies(){
 export async function searchMovies(payload) {
   if (get(loading)) return;
   loading.set(true);
+  message.set('')
 
   const { title, type, year, number } = payload;
 
@@ -43,7 +44,7 @@ export async function searchMovies(payload) {
   const pageLength = Math.ceil(total / 10);
   if (pageLength > 1) {
     for (let page = 2; page <= pageLength; page += 1) {
-      if (page > number / 10) break;
+      if (page > payload.number / 10) break;
       const res = await _fetchMovie({
         ...payload,
         page
@@ -85,7 +86,7 @@ function _fetchMovie(payload) {
       const res = await axios.get(url);
       console.log(res.data);
       if (res.data.Error) {
-        reject(res.data.error);
+        reject(res.data.Error);
       }
       resolve(res);
     } catch (error) {
