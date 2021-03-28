@@ -14,7 +14,7 @@
 
 - 템플릿을 사용하지 않고, Snowpack 으로 SVelte 프로젝트를 구성할 수 있다.
 - SPA(Single Page Application)을 위한 Router(Svelte SPA Router)를 구성해 페이지 단위로 개발할 수 있다.
-- OMDb API를 활용해 실제 영화 정보ㅡㄹ 검색하고 출력할 수 있다.
+- OMDb API를 활용해 실제 영화 정보를 검색하고 출력할 수 있다.
 - API Key 가 노출되지 않도록 Netlify Functions(서버리스 함수)를 사용해 백엔드를 구성하고, 로컬에서 테스트할 수 있다.
 - GitHub 저장소에 Push(업로드)하고 Netlify Hosting 으로 CD(지속적인 배포)를 적용할 수 있다.
 
@@ -79,7 +79,7 @@ export default app;
 
 - public/index.js
 
-```js public/index.js
+```js public/index.html
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -127,7 +127,7 @@ $ npm run dev
       ["@snowpack/plugin-svelte", {
         preprocess: require('svelte-preprocess')({
           scss: {
-            prependData : '@import "./src/scss/main.scss"';
+            prependData : '@import "./src/scss/main.scss"'
           },
           postcss: {
             plugins: [
@@ -156,7 +156,7 @@ $ npm i -D autoprefixer postcss @snowpack/plugin-sass
 
 - 설치 확인
 
-```scss src/scss/main.css
+```scss src/scss/main.scss
 h1 {
   color: red;
   display: flex;
@@ -617,7 +617,8 @@ grid-column: 1/-1;  // 한줄을 모두 사용하겠다
 # GitHub 그리고 Netlify
 
 ## 1. .gitignore 생성하고 GitHub 에 푸쉬
-
+- vscode, node, dotenv
+- custom 추가 : build/
 https://gitignore.io
 
 ## 2. Netlify 배포(CD)
