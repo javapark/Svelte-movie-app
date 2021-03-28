@@ -1,10 +1,10 @@
 <script>
   import Loader from "~/components/Loader.svelte";
-//   import { searchMovieWidthId } from "~/store/movie";
+  import { searchMovieWidthId } from "~/store/movie";
 
   export let params = {};
 
-  //searchMovieWidthId(params.id);
+  searchMovieWidthId(params.id);
 </script>
 
 <div class="container">
