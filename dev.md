@@ -583,6 +583,11 @@ svelte-spa-router 의 advanced usage 를 보면 Route transition ( fade 기능)�
 ```
 
 ## 17. 페이지 전환 스크롤 위치 복구
+SPA 특성 상 페이지 전환 시 스크롤 위치를 복구해야 할 필요가 있다
+- svelte-spa-router 의 advanced usage 를 보면 Restore scroll position 을 이용할 수 있다
+```svelte App.svelte
+<Router {routes} restoreScrollState={true}/>
+```
 
 ## 18. 반응형 스타일 일괄 적용
 
