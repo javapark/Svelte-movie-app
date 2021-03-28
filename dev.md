@@ -498,8 +498,8 @@ _.unionBy([{'x':1}])
 ```
 
 ## 6. 영화 목록 로딩 애니메이션 추가
-
--
+- store 에 loading 변수 등록 ( store get, set 이용 )
+- svelte 에서 $를 이용하여 로더(Loader) 표시 여부 결정
 
 ## 7. 스켈레톤 UI
 
