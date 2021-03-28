@@ -71,7 +71,7 @@
       grid-template-columns: repeat(3, 120px) 1fr;
       grid-template-rows: repeat( 2, 50px);
     }
-    @media #{$tablet} {
+    @media #{$mobile} {
 
     }
     .text-field {

@@ -590,6 +590,24 @@ SPA 특성 상 페이지 전환 시 스크롤 위치를 복구해야 할 필요�
 ```
 
 ## 18. 반응형 스타일 일괄 적용
+scss 에서는 #{} 보간을 이용해 다양한 컴포넌트에서 활용할 수 있다
+```scss main.scss
+$tablet: "all and (max-width:1200px)";
+$mobile: "all and (max-width:720px)";
+
+.container{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    position: relative;
+    @media #{$tablet} {
+        padding: 40px 40px 0;
+    }
+    @media all and (max-width:720px) {
+        padding: 40px 20px 0;
+    }
+}
+```
 
 # GitHub 그리고 Netlify
 

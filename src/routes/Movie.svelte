@@ -2,20 +2,20 @@
   import Loader from "~/components/Loader.svelte";
   import { searchMovieWidthId, theMovie, loading } from "~/store/movie";
 
-  let imageLoading = true
+  let imageLoading = true;
 
   export let params = {};
 
   searchMovieWidthId(params.id);
 
-  function requestDifferentSizeImage(url, size=700){
-    const src = url.replace('SX300', `SX${size}`)
-    const img = document.createElement('img')
-    img.src = src
-    img.addEventListener('load', ()=>{
-      imageLoading = false
-    })
-    return src
+  function requestDifferentSizeImage(url, size = 700) {
+    const src = url.replace("SX300", `SX${size}`);
+    const img = document.createElement("img");
+    img.src = src;
+    img.addEventListener("load", () => {
+      imageLoading = false;
+    });
+    return src;
   }
 </script>
 
@@ -34,9 +34,14 @@
     </div>
   {:else}
     <div class="movie-details">
-      <div style="background-image: url({requestDifferentSizeImage($theMovie.Poster)})" class="poster">
+      <div
+        style="background-image: url({requestDifferentSizeImage(
+          $theMovie.Poster
+        )})"
+        class="poster"
+      >
         {#if imageLoading}
-          <Loader absolute scale=".7"/>
+          <Loader absolute scale=".7" />
         {/if}
       </div>
       <div class="specs">
@@ -54,9 +59,13 @@
           <div class="rating-wrap">
             {#each $theMovie.Ratings as rating (rating.Source)}
               <div class="rating" title={rating.Source}>
-              <img src="/assets/{rating.Source}.png" alt="{rating.Source}" height="30"/>
-            <span>{rating.Value}</span>  
-            </div>
+                <img
+                  src="/assets/{rating.Source}.png"
+                  alt={rating.Source}
+                  height="30"
+                />
+                <span>{rating.Value}</span>
+              </div>
             {/each}
           </div>
         </div>
@@ -85,6 +94,11 @@
   .skeleton-loader {
     display: flex;
     position: relative;
+    .poster {
+      @media #{$mobile} {
+        display: none;
+      }
+    }
     .skeletons {
       flex: 1; // 플렉스 그로우 1, 화면 비율에 맞게 늘거나 준다
       .skeleton {
@@ -114,10 +128,13 @@
     }
   }
 
-.movie-details{
-  color: $color--white-50;
-  display: flex;
-}
+  .movie-details {
+    color: $color--white-50;
+    display: flex;
+    @media #{$mobile} {
+      display: block;
+    }
+  }
   .poster {
     flex-shrink: 0;
     width: 500px;
@@ -127,46 +144,63 @@
     background-color: $color--area;
     background-position: center;
     background-size: cover;
-    position :relative;
+    position: relative;
+
+    @media #{$tablet} {
+      width: 300px;
+      height: 300px * 3/2;
+      margin-right: 30px;
+    }
+    @media #{$mobile} {
+      margin-right:0;
+      margin-bottom: 50px;;
+    }
   }
-  .specs{
-    .title{
-      font-family: 'Oswald', sans-serif;
+  .specs {
+    .title {
+      font-family: "Oswald", sans-serif;
       font-size: 70px;
       color: $color--white;
       line-height: 1;
       margin-bottom: 30px;
-
+      @media #{$mobile} {
+        font-size: 50px;
+      }
     }
-    .labels{
+    .labels {
       color: $color--primary;
-      .dot{
+      .dot {
         margin: 0 6px;
       }
     }
-    .plot{
+    .plot {
       margin-top: 20px;
     }
 
-    .ratings{
-      .rating-wrap{
-        display:flex;
-        .rating{
-          display:flex;
+    .ratings {
+      .rating-wrap {
+        display: flex;
+        .rating {
+          display: flex;
           align-items: center;
-          margin-right:30px;
-          img{
-            flex-shrink:0;
+          margin-right: 30px;
+          @media #{$tablet} {
+            transform: scale(.85);
+            transform-origin: left;
+            margin-right: 0;
+          }
+          img {
+            flex-shrink: 0;
             margin-right: 6px;
           }
         }
       }
     }
 
-    h3{
+    h3 {
       color: $color--white;
-      margin : 24px 0 6px;
-      font-family: 'Oswald', sans-serif;
+      margin: 24px 0 6px;
+      font-family: "Oswald", sans-serif;
       font-size: 20px;
     }
   }
